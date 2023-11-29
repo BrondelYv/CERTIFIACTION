@@ -118,12 +118,3 @@ Au lieu de maintenir des processeurs et des espaces de stockage dans votre centr
 
 
 
-
-
-
-
-
-
-### MICROSOFT-CERTIFIED : Azure Data Scientist Associate
-
-
