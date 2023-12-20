@@ -120,10 +120,16 @@ Au lieu de maintenir des processeurs et des espaces de stockage dans votre centr
 
 
 
+### Décrire les avantages de la haute disponibilité et de la scalabilité dans le cloud
+
+Durant la création ou le déploiement d’une application cloud, deux des aspects les plus importants à prendre en compte sont la durée de bon fonctionnement (ou haute disponibilité) et la capacité à gérer la demande (ou scalabilité).
+
+![Alt text](image.png)
 
 
+####  Haute disponiblité
 
-
+Lors du deploiement d'une application, il est important que les ressources soient disponibles en cas de besoin.  Cela va permettre de garantir la disponibilité des servcives peu importe les interruptions ou les événements suceptibles de se produire.
 ### MICROSOFT-CERTIFIED : Azure Data Scientist Associate
 
 
