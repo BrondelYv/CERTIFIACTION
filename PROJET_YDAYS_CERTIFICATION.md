@@ -118,6 +118,7 @@ Au lieu de maintenir des processeurs et des espaces de stockage dans votre centr
 
 
 
+<<<<<<< HEAD
 
 
 ### Décrire les avantages de la haute disponibilité et de la scalabilité dans le cloud
@@ -133,3 +134,5 @@ Lors du deploiement d'une application, il est important que les ressources soien
 ### MICROSOFT-CERTIFIED : Azure Data Scientist Associate
 
 
+=======
+>>>>>>> bff3bf7ed9e8abee4590e6e9cd49b123f82441bb
