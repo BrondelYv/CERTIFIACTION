@@ -290,7 +290,57 @@ Ressources et groupes de ressources Azure
 Une ressource est le bloc de construction de base d’Azure. Tout ce que vous créez, provisionnez, déployez, etc. est une ressource. Les machines virtuelles, les réseaux virtuels, les bases de données, les services cognitifs, etc. sont tous considérés comme des ressources dans Azure.
 
 
+Création d'une VM à l'aide du portail Azure
 
+1. Connectez-vous au portail Azure.
+
+2. Sélectionnez Créer une ressource > Calcul > Machine virtuelle > Créer.
+
+3. Le volet Créer une machine virtuelle s’ouvre sur l’onglet De base.
+
+4. Vérifiez ou entrez les valeurs suivantes pour chaque paramètre. Si un paramètre n’est pas spécifié, laissez la valeur par défaut.
+
+
+Paramètre                        Valeur
+Abonnement                       Abonnement Concierge
+Groupe de ressources                 Sélectionnez le nom du groupe de ressources qui commence par learn.
+Nom de la machine virtuelle        my-VM
+Région                                   Conservez la valeur par défaut
+Options de disponibilité           Conservez la valeur par défaut
+Type de sécurité             Conservez la valeur par défaut
+Image                              Conservez la valeur par défaut
+Architecture de machine virtuelle    Conservez la valeur par défaut
+Exécuter avec la remise Azure Spot   Désactivé
+Taille                             Conservez la valeur par défaut
+Type d'authentification            Mot de passe
+Nom d’utilisateur                    azureuser
+Mot de passe                       Entrez un mot de passe personnalisé
+Confirmer le mot de passe          Entrez à nouveau le mot de passe personnalisé
+Aucun port d’entrée public         Aucun
+
+5. Sélectionnez Vérifier et créer.
+
+6. Sélectionner Créer
+![Alt text](image-6.png)
+
+
+
+Une fois que le déploiement a été créé, on peut vérifier la VM créée et toutes les ressources associées à la VM.
+
+Pour ce faire,
+
+1. Sélectionnez Accueil
+2. Sélectionnez Groupes de ressources
+
+3. Sélectionnez le groupe de ressources learn-9a4d3258-8f01-4123-86a2-090ecde575cd
+
+
+
+
+
+
+
+![Alt text](image-3.png)
 
 
 ### MICROSOFT-CERTIFIED : Azure Data Scientist Associate
