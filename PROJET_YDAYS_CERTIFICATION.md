@@ -131,6 +131,168 @@ Durant la création ou le déploiement d’une application cloud, deux des aspec
 ####  Haute disponiblité
 
 Lors du deploiement d'une application, il est important que les ressources soient disponibles en cas de besoin.  Cela va permettre de garantir la disponibilité des servcives peu importe les interruptions ou les événements suceptibles de se produire.
+
+Garantir la disponibilité du service est très important pour le bon contrôle du service lié aux incidents majeurs ou mineurs.
+
+##### SERVICE SLA (SERVIVE LEVEL AGREEMENTS)
+C'est un service qui garantit la disponibilité du service selon le besoin métier:
+
+Est-ce que le SLA de 99% est il différent du SLA de 99,9% : OUI
+
+Tout simplement un SLA de 99% peut être indisponible jusqu'à 1.6 heures par semaine soit 7,2 heures par mois et rester disponible 99% cette durée est cumulative et peut couvrir à plusieurs incidents d'indisponibilité de service.
+Tandsique le SLA de 99,9% peut être indisponible que 10 min par semaine soit 42,2 min par mois.
+
+La différence est donc importante, si le service est indisponible pour votre activité, la différence entre plusieurs minutes et plusieurs heures de temps d'arrêt sera considérable.
+
+En général les services à haute disponibilité sont chers, chaque service Azure à son propre SLA.
+![Alt text](image-1.png)
+
+
+#### Scalabilité
+
+C'est la capacité à ajuster ou à traiter les requêtes par rapport à la demande ou le temps d'exécution. L'unique avantage est que l'on peut payer juster un service de scalabilté selon ces besoins.
+Le cloud étant un modèle basé sur la consommation, si la demande diminue vous pouvez reduire vos ressources ainsi que le coût.
+
+Il exite deux types de scalabilité:
+
+* Scalabilité Horizontale
+* Scalabilité Verticale
+
+
+#### Scalabilité Horizontale
+La scalabilité horizontale consiste à ajouter ou soustraire un certain nombre de ressources.
+C'est-à-dire, si vous rencontrez soudainement une forte augmentation de la demande, vos ressources déployées peuvent faire l’objet d’un scale-out (automatiquement ou manuellement). Par exemple, vous pouvez ajouter des VMs (machines virtuelles) ou des conteneurs supplémentaires à des fins de scale-out. De la même manière, en cas de baisse significative de la demande, les ressources déployées peuvent faire l’objet d’un scale-in (automatiquement ou manuellement).
+
+#### Scalabilité Verticale
+La scalabilité verticale vise à augmenter ou diminuer les capacités des ressources.
+C'est-à-dire, si vous développez une application et si vous avez besoin de plus de puissance de traitement, vous pouvez effectuer un scale-up pour ajouter davantage de processeurs ou de RAM à la machine virtuelle. À l’inverse, si vous vous rendez compte que vous avez surestimé les besoins, vous pouvez effectuer un scale-down en réduisant les spécifications du processeur ou de la RAM.
+
+![Alt text](image-2.png)
+
+#### Décrire les avantages de la fiabilité et de la prévisibilité dans le Cloud
+
+##### Fiabilité
+La fiabilité est la capacité d’un système à reprendre son activité après une défaillance et à continuer à fonctionner. C'est également l'un des piliers du cadre Microsoft Azure Well-Architected.
+vous pouvez deployer vos ressources sur l'echelle mondiale en toute fiabilité sans se souci de comment elles seront deployes.
+
+Vous en saurez davantage sur la façon dont Azure tire parti de la mise à l’échelle au niveau à l'échelle mondiale pour garantir la fiabilité, plus loin dans cette série.
+
+
+##### Prévisibilité et Performances dans le Cloud
+La prévisibilité des performances et des coûts est fortement influencée par le cadre Microsoft Azure Well-Architected. Déployez une solution construite autour de ce cadre et vous avez une solution dont les coûts et les performances sont prévisibles.
+
+La prévisibilité des performances se concentre sur la prédiction des ressources nécessaires pour offrir une expérience positive à vos clients. La autoscaling, l’équilibrage de charge et la haute disponibilité sont quelques-uns des concepts Cloud qui prennent en charge la prévisibilité des performances. Si vous avez soudainement besoin de plus de ressources, la autoscaling peut déployer des ressources supplémentaires pour répondre à la demande, puis se réduire lorsque la demande diminue. Ou, si le trafic est fortement concentré dans une zone, l'équilibrage de charge aidera à rediriger une partie de la surcharge vers des zones moins stressées" in the Performance section.
+
+
+#### Décrire les avantages de la sécurité et de la gouvernance dans le Cloud
+Qu’il s’agisse d’un déploiement de type infrastructure as a service ou software as a service, les fonctionnalités cloud prennent en charge la gouvernance et la conformité.
+Selon votre modèle opérationnel, des patchs et mises à jour logiciels peuvent également être appliqués automatiquement, ce qui contribue à la fois à la gouvernance et à la sécurité.
+
+Au niveau de la sécurité, vous pouvez trouver une solution cloud correspondant à vos besoins. Si vous souhaitez un contrôle maximal de la sécurité, le modèle infrastructure as a service vous fournit les ressources physiques mais vous laisse gérer les systèmes d’exploitation et les logiciels installés ainsi que les patchs et la maintenance. Si vous souhaitez que les patchs et la maintenance soient pris en charge automatiquement, les déploiements de type platform as a service ou software as a service sont peut-être les meilleures stratégies cloud.
+
+#### Décrire les avantages de la facilité de gestion dans le cloud
+L’un des principaux avantages du cloud computing réside dans les options de facilité de gestion. Il existe deux types de facilité de gestion pour le cloud computing.
+
+* Gestion du Cloud
+* Gestion dans le Cloud
+
+
+#### Gestion du cloud
+La gestion du cloud correspond à la gestion de vos ressources cloud. Dans le cloud, une organisation peut :
+
+- Mettre à l’échelle automatiquement le déploiement des ressources selon les besoins.
+- Déployer les ressources en fonction d’un modèle préconfiguré, ce qui permet d’éliminer le recours à une configuration manuelle.
+- Effectuer le monitoring de l’intégrité des ressources et le remplacement automatique des ressources défaillantes.
+- Recevoir des alertes automatiques basées sur des métriques configurées, ce qui vous permet de connaître les performances en temps réel.
+
+#### Gestion dans le cloud
+La gestion dans le cloud indique la façon dont vous pouvez gérer votre environnement et vos ressources cloud. L'entreprise peut les gérer :
+
+- Via un portail web.
+- Via une interface de ligne de commande.
+- Via des API.
+- En utilisant PowerShell.
+
+
+#### MICROSOFT - AZURE 
+
+- Décrire les régions, les paires de régions et les régions souveraines Azure
+- Décrire les zones de disponibilité.
+- Décrire les centres de données Azure.
+- Décrire les ressources et les groupes de ressources Azure.
+- Décrire les abonnements.
+- Décrire les groupes d’administration.
+- Décrire la hiérarchie des groupes de ressources, des abonnements et des groupes d’administration.
+
+
+
+
+Navigation dans le bac à sable  avec l’interface de ligne de commande (CLI): Get -date pour obtenir la date actuelle 
+
+Les commandes azure comment par la lettre az : az version 
+
+Erp : {                                                                       
+  "azure-cli": "2.55.0",
+  "azure-cli-core": "2.55.0",
+  "azure-cli-telemetry": "1.1.0",
+  "extensions": {
+    "ai-examples": "0.2.5",
+    "ml": "2.22.0",
+    "ssh": "2.0.2"
+}
+}
+
+On peut utiliser l’interface CLI bash en entrant tout simplement bash dans Azure Cloud Shell
+
+PS /home/mvoumbi> bash
+mvoumbi [ ~ ]$ : mode bash donc on peut utiliser les commandes bash qu’on a habitude d’uitliser
+
+et si on veut revenir en mode Shell il suffit d’entré pwsh
+
+az upgrade
+az interactive : permet d’utiliser le mode interactif Azure CLI 
+
+lorsque le mode interactif est lancer plus besoin de d’enter az :
+
+donc-🡪 version au lieu de az version
+
+pour sortie entrant la commande exit
+
+LES PRINCIPAUX COMPOSANTS ARCHITECTURAUX D’AZURE :
+
+Ils sont divisés en deux composantes essentilles
+Infrastructure physique 
+Infrastructure de gestion
+
+À la base de l’infrastructure physique d’Azure se trouvent les centres de données. D’un point de vue conceptuel, les centres de données s’apparentent à des centres de données de grandes entreprises. Il s’agit d’installations dont les ressources sont organisées dans des racks, avec une alimentation, un système de refroidissement et une infrastructure réseau dédiés.
+En tant que fournisseur de services cloud mondial, Azure dispose de centres de données dans le monde entier. Cependant, ces centres de données individuels ne sont pas directement accessibles. Les centres de données sont regroupés dans des régions Azure ou des zones de disponibilité Azure conçues pour vous faire bénéficier d’une résilience et d’une fiabilité pour vos charges de travail vitales pour l’entreprise.
+
+Zones de disponibilité
+Les zones de disponibilité sont des centres de données physiquement séparés au sein d’une région Azure. Chaque zone de disponibilité est composée d’un ou de plusieurs centres de données équipés d’une alimentation, d’un refroidissement et d’un réseau indépendants. Une zone de disponibilité est configurée pour être une limite d’isolation. Si une zone de disponibilité tombe en panne, l’autre continue à fonctionner. Les zones de disponibilité sont connectées via des réseaux en fibre optique privés très rapides.
+
+
+
+
+
+Paires de régions
+La plupart des régions Azure sont associées à une autre région au sein d’une même zone géographique (par exemple États-Unis, Europe ou Asie) distante d’au moins 480 kilomètres. Cette approche permet la réplication de ressources à l’échelle d’une zone géographique, ce qui contribue à réduire les risques d’interruptions liées à des événements tels que des catastrophes naturelles, des troubles civils, des coupures de courant ou des pannes de réseau physique affectant une région entière. Par exemple, si une région formant une paire est touchée par une catastrophe naturelle, les services basculent automatiquement vers l’autre région de la paire de régions.
+
+
+
+
+
+Décrire l’infrastructure de gestion Azure
+Effectué 100 XP 
+7 minutes
+L’infrastructure de gestion comprend des ressources et des groupes de ressources, des abonnements et des comptes Azure. La compréhension de l’organisation hiérarchique vous aidera à planifier vos projets et produits dans Azure.
+
+Ressources et groupes de ressources Azure
+Une ressource est le bloc de construction de base d’Azure. Tout ce que vous créez, provisionnez, déployez, etc. est une ressource. Les machines virtuelles, les réseaux virtuels, les bases de données, les services cognitifs, etc. sont tous considérés comme des ressources dans Azure.
+
+
+
+
+
 ### MICROSOFT-CERTIFIED : Azure Data Scientist Associate
 
 
