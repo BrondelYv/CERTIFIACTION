@@ -229,7 +229,7 @@ La gestion dans le cloud indique la façon dont vous pouvez gérer votre environ
 
 Navigation dans le bac à sable  avec l’interface de ligne de commande (CLI): Get -date pour obtenir la date actuelle 
 
-Les commandes azure comment par la lettre az : az version 
+Les commandes azure commence par la lettre az : az version 
 
 Erp : {                                                                       
   "azure-cli": "2.55.0",
@@ -336,7 +336,65 @@ Pour ce faire,
 
 
 
+### Décrire les services de calcul et réseau Azure
 
+Dans ce module nous allons étudier les 3 option de calcul sur les VM, les conteneurs et les fonctions Azure.
+
+il y'a deux manière de mettre à l'échelle les VM dans Azure
+- Groupe identique des VM
+- Groupe à haute disponibilité
+
+Voici quelques exemples ou cas d’usage courants de machines virtuelles :
+
+* Pendant le test et le développement. Les machines virtuelles offrent un moyen simple et rapide de créer différentes configurations de système d’exploitation et d’application. Le personnel chargé des tests et du développement peut ensuite facilement supprimer les machines virtuelles quand il n’en a plus besoin.
+
+* Lors de l’exécution d’applications dans le cloud. La possibilité d’exécuter certaines applications dans le cloud public, par opposition à la création d’une infrastructure traditionnelle pour les exécuter, peut apporter des avantages économiques substantiels. Par exemple, une application peut avoir besoin de gérer les fluctuations de la demande. Arrêter des machines virtuelles lorsque vous n’en avez pas besoin ou les démarrer rapidement pour répondre à une augmentation soudaine de la demande signifie que vous payez uniquement pour les ressources que vous utilisez.
+
+* Lors de l’extension de votre centre de données vers le Cloud : une organisation peut développer les capacités de son propre réseau local en créant un réseau virtuel dans Azure et en ajoutant des machines virtuelles à ce réseau virtuel. Des applications telles que SharePoint peuvent ensuite s’exécuter sur une machine virtuelle Azure au lieu de s’exécuter localement. Cette configuration permet de procéder à un déploiement plus simple ou moins onéreux que dans un environnement local.
+
+* Pendant une reprise d’activité après sinistre : tout comme avec l’exécution de certains types d’applications dans le cloud et l’extension d’un réseau local au cloud, vous pouvez faire des économies significatives en suivant une approche IaaS pour la reprise d’activité après sinistre. En cas de panne du centre de données principal, vous pouvez créer des machines virtuelles s’exécutant sur Azure pour exécuter vos applications critiques, puis les arrêter quand le centre de données principal redevient opérationnel.
+
+
+## La migration vers le Cloud avec les VMs
+
+Les machines virtuelles constituent également un excellent choix quand vous passez d’un serveur physique au cloud (également appelé « lift-and-shift »). Vous pouvez créer une image du serveur physique et l’héberger dans une machine virtuelle avec peu ou pas de changements. Tout comme un serveur sur site physique, vous devez maintenir la VM : vous êtes responsable de la maintenance du système d'exploitation installé et du logiciel
+
+# Tache 1 : Création d'une VM Lunix et installer Nginx
+
+il faut se connecter au bac à sable ou à Azure Cloud Shell
+
+az vm create --resource-group "learn-b2ef0595-4422-417e-8385-811627a0a255" --name my-vm --public-ip-sku Standard --image Ubuntu2204 --admin-username azureuser --generate-ssh-keys
+
+
+Pour configurer la VM il faut entrée: 
+
+az vm extension set --resource-group "learn-b2ef0595-4422-417e-8385-811627a0a255" --vm-name my-vm --name customScript --publisher Microsoft.Azure.Extensions --version 2.1 --settings '{"fileUris":["https://raw.githubusercontent.com/MicrosoftDocs/mslearn-welcome-to-azure/master/configure-nginx.sh"]}' --protected-settings '{"commandToExecute": "./configure-nginx.sh"}'
+
+réponse de la config sous un script bash: 
+
+#!/bin/bash
+
+# Update apt cache.
+sudo apt-get update
+
+# Install Nginx.
+sudo apt-get install -y nginx
+
+# Set the home page.
+echo "<html><body><h2>Welcome to Azure! My name is $(hostname).</h2></body></html>" | sudo tee -a /var/www/html/index.html
+
+
+
+# Décrire Azure Virtual Desktop
+
+C'est un service de virtualisation des postes de travail et des applications qui s'exécute dans le cloud. Il vous permet d’utiliser une version cloud de Windows depuis n'importe quel endroit.
+
+Avec Azure Virtual Desktop, les données et les applications sont séparées du matériel local. le bureau réel et les applications s’exécutent dans le cloud, ce qui réduit le risque de laisser des données confidentielles sur un appareil personnel. De plus, les sessions utilisateur sont isolées dans des environnements à session unique et multi-session.
+
+
+# Décrire les conteneurs Azure
+
+# Comparaison entre VM et conteneurs : 2 techniques de virtualisations des applications
 
 
 
