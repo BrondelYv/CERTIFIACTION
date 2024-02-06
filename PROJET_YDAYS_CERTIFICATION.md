@@ -75,8 +75,19 @@ Le tableau suivant met en évidence quelques aspects comparatifs clés entre les
 
 Que se passe-t-il si vous êtes déjà établi avec VMware dans un environnement de cloud privé, et si vous souhaitez migrer vers un cloud public ou hybride ? Azure VMware Solution vous permet d’exécuter vos charges de travail VMware dans Azure avec une intégration et une scalabilité transparentes.
 
+## Responsabilité partagée dans le nuage
+https://learn.microsoft.com/en-us/azure/security/fundamentals/media/shared-responsibility/shared-responsibility.svg
+Lorsque vous considérez et évaluez les services cloud publics, il est essentiel de comprendre le modèle de responsabilité partagée et les tâches de sécurité que le fournisseur d'informatique en nuage gère et quelles tâches vous gérez. Les responsabilités en matière de charge de travail varient selon que la charge de travail est hébergée sur le logiciel en tant que service (SaaS), la plate-forme en tant que service (PaaS), l'infrastructure en tant que service (IaaS) ou dans un centre de données sur site.
+
+
 
 # Décrire le modèle basé sur la consommation
+
+## IMPORTANT....!!!
+
+"L’élasticité fait référence à la possibilité de mettre à l’échelle les ressources en fonction des besoins, par exemple pendant les heures ouvrées, pour garantir qu’une application peut satisfaire la demande, puis de réduire les ressources disponibles pendant les heures creuses. L’agilité fait référence à la possibilité de déployer rapidement de nouvelles applications et de nouveaux services. La haute disponibilité fait référence à la possibilité de garantir qu’un service ou une application reste disponible en cas de défaillance. La géodistribution permet de rendre un service ou une application disponible dans plusieurs emplacements géographiques qui sont généralement proches de vos utilisateurs.
+
+https://www.ovhcloud.com/fr/public-cloud/what-cloud-service/"
 
 Lorsqu'on compare les modèles d'infrastructure informatique, il y a deux types de dépenses à considérer. Dépenses d’investissement ("CapEx") et dépenses d’exploitation ("OpEx").
 
