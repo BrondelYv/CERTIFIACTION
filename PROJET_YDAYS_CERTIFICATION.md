@@ -92,6 +92,45 @@ https://www.ovhcloud.com/fr/public-cloud/what-cloud-service/"
 
 Machines Virtuelles Azure est une offre IaaS. Le client est responsable de la configuration de la machine virtuelle ainsi que de toutes les configurations du système d’exploitation. Azure App Services et Azure Cosmos DB sont des offres PaaS. Microsoft Office 365 est une offre SaaS.
 
+
+### Décrire la gestion des coûts dans Azure
+
+Les compteurs d’utilisation, comme le temps processeur, la taille du disque et les opérations d’écriture, sont utilisés pour calculer votre facture pour une ressource Azure. La suppression ou la désallocation d’une ressource signifie que vous ne serez plus facturé pour celle-ci. Les prix peuvent varier en fonction de la région. Les ressources coûtent le même prix, indépendamment de l’heure de la journée ou du jour de la semaine.
+
+La calculatrice de prix Azure vous permet d’estimer et de configurer en fonction de vos besoins spécifiques. Vous allez recevoir ensuite une estimation du prix global ainsi que le détail des coûts associés à chaque ressource ajoutée à votre solution.
+
+
+### Décrire les fonctionnalités et outils d'Azure pour la gouvernance et la conformité
+
+Azure Policy est un service Azure qui vous permet de créer, affecter et gérer des stratégies qui contrôlent ou auditent des ressources. Ces stratégies appliquent différentes règles à toutes les configurations des ressources pour que celles-ci restent conformes aux standards de l’entreprise.
+
+Les stratégies Azure vous permettent d’appliquer des standards d’entreprise sur de nouvelles machines virtuelles quand elles sont combinées avec Azure VM Image Builder et Azure Compute Gallery. Grâce à Azure Policy et aux affectations avec contrôle d’accès en fonction du rôle (RBAC), les entreprises peuvent appliquer des standards aux ressources Azure. Cependant, sur les machines virtuelles, ces mécanismes affectent seulement le plan de contrôle ou la route vers la machine virtuelle.
+
+Azure Policy est un service Azure qui vous permet de créer, affecter et gérer des stratégies qui contrôlent ou auditent des ressources.
+
+Azure Policy vous permet de définir à la fois des stratégies individuelles et des groupes de stratégies associées, appelées « initiatives ». Azure Policy évalue vos ressources et met en évidence celles qui ne sont pas conformes aux stratégies que vous avez créées. Azure Policy vous permet également d’empêcher la création de ressources non conformes.
+
+Les "avis d’intégrité" sont des problèmes qui vous obligent à agir de façon proactive pour éviter une interruption du service, comme les services abandonnés et les changements cassants. Les problèmes de service sont des problèmes comme des pannes qui nécessitent des actions immédiates.
+
+Application Insights est une fonctionnalité d’Azure Monitor qui vous permet de superviser les applications en cours d’exécution, de détecter automatiquement les anomalies dans les performances et d’utiliser des outils d’analytique intégrés pour voir ce que font les utilisateurs sur une application.
+
+Service Health vous informe des problèmes de service liés à Azure, comme les temps d’arrêt à l’échelle d’une région.
+
+
+
+Incorrect : Une identité managée affectée par l’utilisateur - Ajouter une identité ne va pas ajouter la possibilité de modifier ou de supprimer la ressource.
+
+Utilisation correcte : Un verrou - Un verrou de ressource va satisfaire aux deux exigences.
+
+Incorrect : Une étiquette - Une étiquette ne va pas satisfaire aux exigences.
+
+Incorrect : Accès conditionnel - L’accès conditionnel ne va pas satisfaire aux exigences.
+
+Protéger vos ressources Azure avec un verrou - Azure Resource Manager | Microsoft Docs
+
+Décrire les fonctionnalités et les outils d’Azure pour la gouvernance et la conformité - Formation | Microsoft Learn
+
+Chaque région Azure est toujours appairée à une autre région au sein de la même zone géographique (par exemple États-Unis, Europe ou Asie) à au moins 482 kilomètres de distance.
 ***************************************************************************************************************
 Lorsqu'on compare les modèles d'infrastructure informatique, il y a deux types de dépenses à considérer. Dépenses d’investissement ("CapEx") et dépenses d’exploitation ("OpEx").
 
@@ -303,7 +342,7 @@ L’infrastructure de gestion comprend des ressources et des groupes de ressourc
 
 Ressources et groupes de ressources Azure
 Une ressource est le bloc de construction de base d’Azure. Tout ce que vous créez, provisionnez, déployez, etc. est une ressource. Les machines virtuelles, les réseaux virtuels, les bases de données, les services cognitifs, etc. sont tous considérés comme des ressources dans Azure.
-
+Les ressources ne peuvent être associées qu’à un seul abonnement. Les abonnements peuvent être regroupés en groupes d’administration. Un compte Azure peut être associé à plusieurs abonnements.
 
 Création d'une VM à l'aide du portail Azure
 
@@ -353,8 +392,34 @@ Pour ce faire,
 
 ### Décrire les services de calcul et réseau Azure
 
+************************************************************
+### Important
+
+Les machines virtuelles sont des émulations logicielles d’ordinateurs physiques. Elles incluent un processeur virtuel, une mémoire, un stockage et des ressources réseau. Les machines virtuelles hébergent un système d’exploitation, et vous pouvez y installer et exécuter des logiciels de la même façon que sur un ordinateur physique.
+Azure Functions vous permet d’exécuter du code en tant que service sans avoir à gérer la plateforme ou l’infrastructure sous-jacente. Azure Logic Apps est similaire à Azure Functions, mais utilise des workflows prédéfinis au lieu de vous permettre de développer votre propre code.
 Dans ce module nous allons étudier les 3 option de calcul sur les VM, les conteneurs et les fonctions Azure.
 
+Vous pouvez lier des réseaux virtuels ensemble en utilisant le peering de réseaux virtuels. Le peering permet de faire communiquer les ressources de chaque réseau virtuel entre-elles.
+
+Les connexions ExpressRoute et Passerelle VPN Azure sont deux services que vous pouvez utiliser pour connecter un réseau local à Azure. Bastion fournit une interface web pour administrer à distance des machines virtuelles Azure en utilisant SSH/RDP. Pare-feu Azure est un service de pare-feu avec état utilisé pour protéger les réseaux virtuels.
+
+Les conteneurs constituent un environnement de virtualisation. Tout comme plusieurs machines virtuelles peuvent s’exécuter sur un seul hôte physique, vous pouvez exécuter plusieurs conteneurs sur un seul hôte physique ou virtuel. Contrairement aux machines virtuelles, vous ne gérez pas le système d’exploitation d’un conteneur.
+
+Stockage Blob Azure est une solution de stockage d’objets que vous pouvez utiliser pour stocker de très grandes quantités de données non structurées, comme des données texte ou binaires.
+
+## Décrire les services de stockage Azure
+
+Le niveau de stockage archive stocke des données hors connexion et offre les coûts de stockage les plus bas, mais également les coûts de réhydratation et d’accès aux données les plus élevés. Le niveau de stockage chaud est optimisé pour le stockage des données avec accès fréquents. Les données du niveau d’accès sporadique peuvent tolérer une disponibilité légèrement inférieure, mais nécessitent toujours des caractéristiques de durabilité élevée, de latence de récupération et de débit similaires à celles des données chaudes.
+
+Azure Files offre des partages de fichiers complètement managés dans le cloud, accessibles en utilisant le protocole SMB (Server Message Block). Le montage des partages de fichiers Azure s’effectue de la même manière que la connexion à des partages sur un réseau local.
+
+Azure Files offre des partages de fichiers complètement managés dans le cloud, accessibles via les protocoles standard SMB et NFS.
+
+## Décrire l’identité, l’accès et la sécurité Azure
+L’objectif de la défense en profondeur est d’utiliser plusieurs couches de protection pour empêcher l’accès ou le vol d’informations par des utilisateurs non autorisés.
+
+Azure RBAC vous permet d’attribuer un ensemble d’autorisations à un utilisateur ou à un groupe. Les étiquettes de ressource vous permettent de localiser et d’agir sur des ressources associées à des charges de travail, des environnements, des unités organisationnelles et des propriétaires spécifiques. Les verrous de ressource empêchent la modification ou la suppression accidentelle d’une ressource. Key Vault est un service cloud centralisé conçu pour le stockage des secrets d’une application, à un emplacement central unique.
+************************************************************
 il y'a deux manière de mettre à l'échelle les VM dans Azure
 - Groupe identique des VM
 - Groupe à haute disponibilité
