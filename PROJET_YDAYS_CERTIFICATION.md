@@ -85,10 +85,14 @@ Lorsque vous considérez et évaluez les services cloud publics, il est essentie
 
 ## IMPORTANT....!!!
 
+****************************************************************************************************************
 "L’élasticité fait référence à la possibilité de mettre à l’échelle les ressources en fonction des besoins, par exemple pendant les heures ouvrées, pour garantir qu’une application peut satisfaire la demande, puis de réduire les ressources disponibles pendant les heures creuses. L’agilité fait référence à la possibilité de déployer rapidement de nouvelles applications et de nouveaux services. La haute disponibilité fait référence à la possibilité de garantir qu’un service ou une application reste disponible en cas de défaillance. La géodistribution permet de rendre un service ou une application disponible dans plusieurs emplacements géographiques qui sont généralement proches de vos utilisateurs.
 
 https://www.ovhcloud.com/fr/public-cloud/what-cloud-service/"
 
+Machines Virtuelles Azure est une offre IaaS. Le client est responsable de la configuration de la machine virtuelle ainsi que de toutes les configurations du système d’exploitation. Azure App Services et Azure Cosmos DB sont des offres PaaS. Microsoft Office 365 est une offre SaaS.
+
+***************************************************************************************************************
 Lorsqu'on compare les modèles d'infrastructure informatique, il y a deux types de dépenses à considérer. Dépenses d’investissement ("CapEx") et dépenses d’exploitation ("OpEx").
 
 Les CapEx sont généralement des dépenses uniques et initiales pour l’achat ou la sécurisation de ressources tangibles. L'achat d'un nouveau bâtiment, le repavage du parking, la construction d'un centre de données ou l'achat d'un véhicule d'entreprise sont des exemples de CapEx.
