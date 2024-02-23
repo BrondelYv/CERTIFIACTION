@@ -445,7 +445,11 @@ il faut se connecter au bac à sable ou à Azure Cloud Shell
 
 az vm create --resource-group "learn-b2ef0595-4422-417e-8385-811627a0a255" --name my-vm --public-ip-sku Standard --image Ubuntu2204 --admin-username azureuser --generate-ssh-keys
 
-
+**
+vmname="myVM"
+username="azureuser"
+az vm create --resource-group "learn-b2ef0595-4422-417e-8385-811627a0a255" --name $vmname --image Win2022AzureEditionCore --public-ip-sku Standard --image Ubuntu2204 --admin-username azureuser
+**
 Pour configurer la VM il faut entrée: 
 
 az vm extension set --resource-group "learn-b2ef0595-4422-417e-8385-811627a0a255" --vm-name my-vm --name customScript --publisher Microsoft.Azure.Extensions --version 2.1 --settings '{"fileUris":["https://raw.githubusercontent.com/MicrosoftDocs/mslearn-welcome-to-azure/master/configure-nginx.sh"]}' --protected-settings '{"commandToExecute": "./configure-nginx.sh"}'
@@ -476,12 +480,82 @@ Avec Azure Virtual Desktop, les données et les applications sont séparées du 
 
 # Comparaison entre VM et conteneurs : 2 techniques de virtualisations des applications
 
-
+![Alt text](image-7.png)
 
 ![Alt text](image-3.png)
 
+ces deux techniques de virtualisations permettent de gérer de façon différente l'exécutable des applications.
+Avec les VM on peut gérer et avoir le contrôle tout son environnement, matériel et outil nécessaires mais les VM doit avoir les mêmes systèmes d'exploitations, en résumé les VM se soucient du sytème d'exploitation pour exécuter les applications, tant dis que les conteneurs n'ont pas besoin du système d'exploitation pour faire le déploiement et d'exécuter les applications.
 
-### MICROSOFT-CERTIFIED : Azure Data Scientist Associate
+## Azure Container Apps
+La plateforme Azure Container Apps est similaire à bien des égards à une instance de conteneur. Elle vous permettent d’être opérationnel immédiatement, suppriment l’élément de gestion de conteneurs et constituent une offre PaaS. Container Apps offre des avantages supplémentaires, tels que la possibilité d’incorporer un équilibrage de charge et une mise à l’échelle. Ces autres fonctions vous permettent d’être plus élastique dans votre conception.
+
+## Azure Kubernetes Service
+Azure Kubernetes Service (AKS) est un service PaaS d’orchestration de conteneurs. Un service d’orchestration gère le cycle de vie de conteneurs. Lorsque vous déployez une flotte de conteneurs, AKS peut rendre la gestion de la flotte plus simple et plus efficace.
+
+## Conseil : Utilisation des conteneurs est la solution majeur pour le déploiement des applications.
+
+Les conteneurs sont souvent utilisés pour créer des solutions utilisant une architecture de microservices. Cette architecture consiste à diviser les solutions en structures plus petites et indépendantes. Par exemple, vous pourrez diviser un site web en trois conteneurs : un qui héberge votre serveur front-end, un autre qui héberge votre back-end et un troisième destiné au stockage. Cette division vous permet de séparer des parties de votre application en sections logiques pouvant être maintenues, mises à l'échelle ou mises à jour indépendamment
+
+Imaginez que le back-end de votre site web a atteint sa capacité, mais que l'interface utilisateur et le stockage ne sont pas sollicités. Avec les conteneurs, vous pouvez mettre à l’échelle le back-end séparément pour améliorer les performances. Si quelque chose nécessitait un tel changement, vous pourriez également choisir de modifier le service de stockage ou de modifier l'interface utilisateur sans affecter aucun des autres composants.
+
+# Décrire les fonctions Azure
+
+Azure Functions est une option de calcul serverless pilotée par les événements qui ne demande pas de maintenance au niveau des machines virtuelles ou des conteneurs.
+Avec Azure Functions, un événement déclenche la fonction, ce qui limite la nécessité de garder des ressources provisionnées quand il n’y a pas d’événements.
+
+## Avantages d’Azure Functions
+
+Azure Functions est idéal quand votre seule préoccupation est le code qui exécute votre service et non la plateforme ou l’infrastructure sous-jacentes.
+Azure Functions exécute votre code quand il est déclenché et libère automatiquement les ressources lorsque la fonction est terminée. Dans ce modèle, vous êtes facturé uniquement pour le temps processeur utilisé pendant l’exécution de votre fonction.
+
+Les fonctions sont un composant clé de l’informatique serverless. Il s’agit également d’une plateforme de calcul générale permettant d’exécuter n’importe quel type de code. Si les besoins de l’application du développeur changent, vous pouvez déployer le projet dans un environnement qui n’est pas serverless. Cette flexibilité vous permet de gérer la mise à l’échelle, d’exécuter sur des réseaux virtuels et même d’isoler complètement les fonctions.
+
+## Décrire les options d’hébergement d’applications
+
+Si vous avez besoin d’héberger votre application sur Azure, vous pouvez vous tourner dans un premier temps vers une machine virtuelle ou des conteneurs. Les machines virtuelles et les conteneurs offrent d’excellentes solutions d’hébergement. Les machines virtuelles vous offrent un contrôle maximal de l’environnement d’hébergement et vous permettent de le configurer exactement comme vous le souhaitez. Les machines virtuelles constituent peuvent également la méthode d’hébergement la plus familière si vous débutez avec le cloud. Les conteneurs, grâce à la possibilité d’isoler et de gérer individuellement différents aspects de la solution d’hébergement, peuvent aussi être une option robuste et convaincante.
+Azure App Service est aussi une option d'hébergement d'applacation ![Alt text](image-8.png)
+
+Il permet de créer et d’héberger des applications web, des tâches en arrière-plan, des back-ends mobiles et des API RESTful dans le langage de programmation de votre choix, sans devoir gérer l’infrastructure. Il offre une mise à l’échelle automatique et une haute disponibilité. App Service prend en charge Windows et Linux. Il permet des déploiements automatisés à partir de GitHub, Azure DevOps ou n’importe quel dépôt Git pour prendre en charge un modèle de déploiement continu.
+
+Azure App Service est une option d’hébergement robuste que vous pouvez utiliser pour héberger vos applications dans Azure. Azure App Service vous permet de vous concentrer sur la création et la maintenance de votre application, et se concentre sur le maintien de l'environnement en état de fonctionnement.
+
+Azure App Service est un service PaaS basé sur HTTP pour l’hébergement d’applications web, d’API REST et de back-ends mobiles. Il prend en charge plusieurs langages, dont .NET, .NET Core, Java, Ruby, Node.js, PHP ou Python. Il prend aussi en charge les environnements Windows et Linux.
+
+### Types de services d'application
+
+Avec Az App Service on peut héberger les services d'application tels que:
+- Applications web
+- Applications API
+- WebJobs
+- Applications mobiles
+
+* Applications web
+App Service offre une prise en charge complète de l’hébergement d’applications web avec ASP.NET, ASP.NET Core, Java, Ruby, Node.js, PHP ou Python. Vous pouvez choisir un système d’exploitation hôte Windows ou Linux.
+
+* Applications API
+Comme dans l’hébergement d’un site web, vous pouvez générer des API web REST en utilisant le langage et l’infrastructure de votre choix. Vous disposez d’une prise en charge complète de Swagger, et vous pouvez empaqueter et publier votre API sur la Place de marché Azure. Les applications produites peuvent être consommées à partir de n’importe quel client basé sur HTTP ou HTTPS.
+
+* WebJobs
+Vous pouvez utiliser la fonctionnalité WebJobs pour exécuter un programme (.exe, Java, PHP, Python ou Node.js) ou un script (.cmd, .bat, PowerShell ou Bash) dans le même contexte qu’une application web, une application API ou une application mobile. Ils peuvent être planifiés ou exécutés par un déclencheur. Les tâches web sont souvent utilisées pour exécuter des tâches en arrière-plan dans le cadre de votre logique d’application.
+
+* Applications mobiles
+Utilisez la fonctionnalité Mobile Apps d’App Service pour créer rapidement un back-end pour les applications iOS et Android. En quelques actions sur le portail Azure, vous pouvez :
+
+Stocker les données d’application mobile dans une base de données SQL basée sur le cloud.
+Authentifier les clients par rapport à des fournisseurs de réseaux sociaux courants comme MSA, Google, Twitter et Facebook.
+Envoyer des notifications Push.
+Exécuter une logique de back-end personnalisée en C# ou Node.js.
+Du côté de l’application mobile, vous disposez de la prise en charge des SDK pour les applications natives iOS et Android, Xamarin et React.
+
+
+## Décrire la mise en réseau virtuel Azure
+
+Les réseaux virtuels et les sous-réseaux virtuels Azure permettent à des ressources Azure (par exemple, des machines virtuelles, des applications web et des bases de données) de communiquer entre elles, avec des utilisateurs sur les utilisateurs sur Internet, ainsi qu'avec les ordinateurs clients sur site.
+
+## Configuration l'accès réseau
+
+az vm list
 
 
 =======
